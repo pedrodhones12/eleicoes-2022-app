@@ -1,0 +1,15 @@
+CREATE TABLE Eleicao (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Ano INT NOT NULL,
+    Turno INT NOT NULL, -- 1 ou 2
+    Cargo NVARCHAR(100) NOT NULL -- Presidente, Governador, etc
+);
+
+  update(id: number, data: any) {
+    return this.http.put(`${this.api}/${id}`, data);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${this.api}/${id}`);
+  }
+}
