@@ -1,48 +1,77 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-        <script src="script.js"></script>
-    <title>Consulta Eleições</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleições 2022 - Análise de Dados</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <main>
-    <section>
-      <h2>Dados das Eleições</h2>
-      <p>A análise do banco de dados das eleições presidenciais de 2022 no Brasil permite compreender, de forma estruturada,
-         o comportamento do eleitorado em diferentes regiões do país. A partir dos dados coletados, é possível observar a distribuição dos votos 
-         entre os principais candidatos, com destaque
-         para os partidos Partido dos Trabalhadores (PT) e Partido Liberal (PL).</p>
-    </section>
+    <div class="container">
+        <header>
+            <h1>🗳️ Análise das Eleições Presidenciais 2022</h1>
+            <p>Dados oficiais do primeiro turno - Comparativo entre estados</p>
+        </header>
 
-    <section>
-      <h2>organização</h2>
-      <article>
-        <h3>Web Design</h3>
-        <p>O conjunto de dados organiza informações por estado, possibilitando identificar padrões regionais e diferenças no desempenho eleitoral.
-           Em estados das regiões Nordeste e Norte, por exemplo, nota-se uma predominância de votos no PT, enquanto em parte das regiões Sul, 
-           Centro-Oeste e Sudeste há maior presença de vitórias do PL. Essa divisão evidencia não apenas preferências políticas,
-            mas também aspectos socioeconômicos e culturais que influenciam o voto.</p>
-      </article>
+        <!-- Botão para acessar o Banco de Dados -->
+        <div class="db-button-container">
+            <button id="btnAcessarBD" class="btn-database">
+                📊 ACESSAR BANCO DE DADOS
+            </button>
+            <span class="db-hint">Clique para visualizar todos os dados eleitorais</span>
+        </div>
 
-      <article>
-        <h3>Analise assertiva</h3>
-        <p>Além disso, o banco de dados permite analisar indicadores como percentual de votos válidos, total de eleitores e diferença 
-          entre os candidatos em cada estado. Esses elementos ajudam a compreender a intensidade das vitórias e a competitividade 
-          eleitoral em cada localidade..</p>
-      </article>
+        <!-- Conteúdo principal -->
+        <main>
+            <section class="intro">
+                <h2>Comportamento do Eleitorado Brasileiro</h2>
+                <p>As análises do banco de dados das eleições presidenciais de 2022 no Brasil permite compreender, de forma estruturada, o comportamento do eleitorado em diferentes regiões do país. A partir dos dados coletados, é possível observar a distribuição dos votos entre os principais candidatos, com destaque para os partidos Partido dos Trabalhadores (PT) e Partido Liberal (PL).</p>
+            </section>
 
-        <button onclick="buscarResultados()">Ver resultados</button>
+            <section class="organizacao">
+                <h2>Organização Regional</h2>
+                <article>
+                    <h3>📌 Padrões Regionais</h3>
+                    <p>O conjunto de dados organiza informações por estado, possibilitando identificar padrões regionais e diferenças no desempenho eleitoral.</p>
+                    <p>Em estados da região Nordeste e Norte, por exemplo, nota-se uma predominância de votos no PT, enquanto em parte das regiões Sul, Centro-Oeste e Sudeste há maior presença de votos do PL. Essa divisão evidencia não apenas preferências políticas, mas também aspectos socioeconômicos e culturais que influenciam o voto.</p>
+                </article>
+            </section>
 
-    <div id="resultado"></div>
+            <!-- Tabela de dados que será preenchida dinamicamente -->
+            <section class="dados-section" id="dadosSection" style="display: none;">
+                <h2>📈 Dados Completos do Banco de Dados</h2>
+                <div class="table-responsive">
+                    <table id="tabelaDados">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Estado</th>
+                                <th>Eleitorado</th>
+                                <th>Abstenção</th>
+                                <th>% Abstenção</th>
+                                <th>Votos Lula</th>
+                                <th>% Lula</th>
+                                <th>Votos Bolsonaro</th>
+                                <th>% Bolsonaro</th>
+                                <th>Votos Brancos</th>
+                                <th>Votos Nulos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaBody">
+                            <tr><td colspan="11" style="text-align:center;">Carregando dados...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="estatisticas" id="estatisticas"></div>
+            </section>
+        </main>
 
-    <h2>Resultados das Eleições 2022</h2>
+        <footer>
+            <p>Fonte: Tribunal Superior Eleitoral (TSE) - Dados reais do 1º turno 2022</p>
+        </footer>
+    </div>
 
-    <p>Clique no botão para verificar os resultados:</p>
-
-   
-
-   
-
+    <script src="script.js"></script>
 </body>
 </html>
